@@ -72,6 +72,52 @@
                 </div>
     </header>
 
+    <!-- Comienzan los filtros -->
+    <main class="filtros">
+        <div class="container-fluid">
+            <div id="filtros-row" class="row">
+                <div id="filtros-col" class="col-2">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Área Laboral</option>
+                        <option value="1">Logística</option>
+                        <option value="2">Seguridad</option>
+                        <option value="3">Programación</option>
+                    </select>
+                </div>
+                <div id="filtros-col" class="col-2">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Jornada</option>
+                        <option value="1">Mañana</option>
+                        <option value="2">Tarde</option>
+                        <option value="3">Noche</option>
+                    </select>
+                </div>
+                <div id="filtros-col" class="col-2">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Modalidad</option>
+                        <option value="1">Online</option>
+                        <option value="2">Presencial</option>
+                        <option value="3">Hibrido</option>
+                    </select>
+                </div>
+                <div id="filtros-col" class="col-2">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div id="filtros-col" class="col-4">
+                    <label for="customRange2" class="form-label">Años de Experiencia</label>
+                    <input type="range" class="form-range" style="padding-bottom: 25px;" min="0" max="20"
+                        id="customRange2">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Terminan los filtros -->
+
     <!-- Comienza main admin -->
 
     <main class="perfiladmin">
@@ -81,14 +127,14 @@
                 <div class="admin-col1">
                     <button id="btn-empresas" type="button" class="btn btn-primary btn-lg">Empresas</button>
                 </div>
-            <div class="admin-col2">
-                <button id="btn-solicitudes" class="btn btn-primary btn-lg">Solicitudes</button>
-            </div>
-            <div class="admin-col3">
-                <button id="btn-ofertas" class="btn btn-secondary btn-lg">Nuevas Ofertas</button>
+                <div class="admin-col2">
+                    <button id="btn-solicitudes" class="btn btn-primary btn-lg">Solicitudes</button>
+                </div>
+                <div class="admin-col3">
+                    <button id="btn-ofertas" class="btn btn-secondary btn-lg">Nuevas Ofertas</button>
+                </div>
             </div>
         </div>
-    </div>
     </main>
 
     <main class="perfiladmin">
@@ -96,16 +142,17 @@
             style="border-radius: 10px; border-color: black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); width: 100%; text-align: center;">
             <div class="admin-row">
                 <div class="admin-col1">
-                    <button id="btn-usuario" type="button" class="btn btn-primary btn-lg" style="background-color: #049DD9; border-color: #049DD9;">Usuarios</button>
+                    <button id="btn-usuario" type="button" class="btn btn-primary btn-lg"
+                        style="background-color: #049DD9; border-color: #049DD9;">Usuarios</button>
                 </div>
-            <div class="admin-col2">
-                <button id="btn-solicitudes" class="btn btn-primary btn-lg">Solicitudes</button>
-            </div>
-            <div class="admin-col3">
-                <button id="btn-newcv" class="btn btn-secondary btn-lg">Nuevos CV</button>
+                <div class="admin-col2">
+                    <button id="btn-solicitudes" class="btn btn-primary btn-lg">Solicitudes</button>
+                </div>
+                <div class="admin-col3">
+                    <button id="btn-newcv" class="btn btn-secondary btn-lg">Nuevos CV</button>
+                </div>
             </div>
         </div>
-    </div>
     </main>
 
     <main class="perfiladmin">
@@ -115,14 +162,14 @@
                 <div class="admin-col1">
                     <button id="btn-perfil" type="button" class="btn btn-primary btn-lg">Perfiles</button>
                 </div>
-            <div class="admin-col2">
-                <button id="btn-activos" class="btn btn-primary btn-lg">Activos</button>
-            </div>
-            <div class="admin-col3">
-                <button id="btn-inactivos" class="btn btn-secondary btn-lg">Inactivos</button>
+                <div class="admin-col2">
+                    <button id="btn-activos" class="btn btn-primary btn-lg">Activos</button>
+                </div>
+                <div class="admin-col3">
+                    <button id="btn-inactivos" class="btn btn-secondary btn-lg">Inactivos</button>
+                </div>
             </div>
         </div>
-    </div>
     </main>
 
     <footer class="footer">
