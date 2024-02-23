@@ -17,7 +17,7 @@ import './Formularioregistro';
 
 //   CrearUsuario.nuevoUsuario();
 
-//   //axios.post('http://localhost:3000//crear-usuario', CrearUsuario.nuevoUsuario)
+//   //axios.post('http://localhost:3000/crear-usuario', CrearUsuario.nuevoUsuario)
 //   .then(res => {
 //     alert(res.data)
 //   })
