@@ -33,20 +33,30 @@ const NavbarAdmin = () => {
                                         <button className="btn nav-item dropdown btn-m userButton userN" style={{ backgroundColor: '#049DD9' }}>
                                             <a className="nav-link dropdown-toggle userName" href="#" id="navbarDropdown" role="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Nombre de usuario
+                                                Nombre de administrador
                                             </a>
                                             <div className="dropdown-menu dropdown-menu-right position-absolute top-100 start-0" aria-labelledby="navbarDropdown">
                                                 {/* Agrega cualquier elemento adicional del menú desplegable según sea necesario */}
-                                                <Link to="./" className="dropdown-item" >
+                                                <Link to="/Visualizacion-Empresas-Admin" className="dropdown-item" >
                                                 <i class="fa-solid fa-building" style={{ color: "#D95525" }}></i> <b>Empresas</b>
                                                 </Link>
-                                                <a className="dropdown-item" href="#"><i class="fa-solid fa-user" style={{ color: "#049DD9" }}></i> <b>Postulantes</b></a>
 
+                                                <Link to="/Visualizacion-Usuario-Admin" className="dropdown-item" >
+                                                <i class="fa-solid fa-user" style={{ color: "#049DD9" }}></i> <b>Postulantes</b>
+                                                </Link>
+                                                
+                                                <Link to="" className="dropdown-item" >
+                                                <i class="fa-solid fa-toggle-on" style={{ color: "#83A637" }}></i><b> Operativo</b>
+                                                </Link>
 
-                                                <a className="dropdown-item" href="#"><i class="fa-solid fa-toggle-on" style={{ color: "#83A637" }}></i><b> Operativo</b></a>
+                                            
                                                 {/* <a className="dropdown-item" href="#">     Activos</a>
                                                     <a className="dropdown-item" href="#">     Inactivos</a> */}
-                                                <a className="dropdown-item" href="#"><i class="fa-solid fa-door-open" style={{ color: "#D97D0D" }}></i><b> Cerrar sesión</b></a>
+                                                
+                                                <Link to="/" className="dropdown-item" >
+                                                <i class="fa-solid fa-door-open" style={{ color: "#D97D0D" }}></i><b> Cerrar sesión</b>
+                                                </Link>
+                                                
 
                                                 {/* <a className="dropdown-item" href="#">Item 4</a> */}
                                                 {/* ... */}
