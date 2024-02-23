@@ -10,6 +10,9 @@ import Nosotros from '../componentes/Nosotros/Nosotros'
 import NavbarAdmin from "../componentes/NavbarAdmin/NavbarAdmin";
 import PanelAdmin from "../componentes/PagesAdministrador/PanelAdmin/PanelAdmin"
 import VisualizacionEmpresas from "../componentes/PagesAdministrador/VisualizacionEmpresas/VisualizacionEmpresas"
+import Registro from "../componentes/Registro/Registro";
+import FormularioEmpresa from "../componentes/PagesEmpresas/FormReg-empresa/FormularioEmpresa";
+
 const TestCaro = () => {
     return (
       <>
@@ -17,12 +20,14 @@ const TestCaro = () => {
       {/* <Navbar /> */}
       {/* <NavbarLogin /> */}
       <NavbarAdmin />
-      <PanelAdmin />
+      {/* <PanelAdmin /> */}
       {/* <EditarCv /> */}
       {/* <InfoEmpresa /> */}
       {/* <EditInfoEmpresa /> */}
-      {/* <FormularioRegistro /> */}
-      <VisualizacionEmpresas />
+      <FormularioRegistro />
+      {/* <VisualizacionEmpresas /> */}
+      {/* <Registro /> */}
+      {/* <FormularioEmpresa /> */}
       <Footer />
       </>
     )
