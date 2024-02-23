@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Efectos/Loading';
 import Footer from "../componentes/Footer/Footer";
-import NavbarLogin from '../componentes/NavbarLogin/NavbarLogin';
 import PanelAdmin from "../componentes/PagesAdministrador/PanelAdmin/PanelAdmin";
+import NavbarAdmin from '../componentes/NavbarAdmin/NavbarAdmin';
 
 const PerfilAdmin = () => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const PerfilAdmin = () => {
               <Loading />
           ) : (
               <>
-                  <NavbarLogin />
+                  <NavbarAdmin />
                   <PanelAdmin/>
                   <Footer />
               </>
