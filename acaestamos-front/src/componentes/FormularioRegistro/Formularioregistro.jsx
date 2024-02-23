@@ -18,7 +18,7 @@ const Formularioregistro = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/crear-usuario', {
+      const response = await axios.post('http://localhost:3000/Crear-usuario', {
         Nombre,
         Apellido,
         Telefono,
