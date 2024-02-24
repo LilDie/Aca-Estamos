@@ -384,8 +384,9 @@
 
 /* Chatbot */
 .btn-chat {
+    margin-bottom: 10%;
     position: fixed;
-    bottom: 20px;
+    bottom: 65px;
     right: 20px;
     z-index: 999;
     cursor: pointer;

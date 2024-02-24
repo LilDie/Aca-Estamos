@@ -1,13 +1,13 @@
 import Footer from "../componentes/Footer/Footer";
-import Header from "../componentes/Header/Header";
-import Navbar from "../componentes/Navbar/Navbar";
+
+import NavbarAdmin from "../componentes/NavbarAdmin/NavbarAdmin";
 import VisualizacionUsuario from "../componentes/PagesAdministrador/VisualizacionUsuarios/VisualizacionUsuarios";
 
 const AdminVisualizacion = () => {
   return (
     <>
-    <Header />
-    <Navbar />
+
+    <NavbarAdmin />
     <VisualizacionUsuario />
     <Footer />
     </>
