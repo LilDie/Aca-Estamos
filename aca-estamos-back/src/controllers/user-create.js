@@ -4,7 +4,7 @@ const CrearUsuario = async (req, res) => {
     const { Nombre, Apellido, Telefono, Rut, FechaNacimiento, Email, Password } = req.body;
 
     try {
-            await User.create({
+            const nuevoUsuario = await User.create({
             Nombre: Nombre,
             Apellido: Apellido,
             Telefono: Telefono,

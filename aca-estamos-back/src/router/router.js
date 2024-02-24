@@ -12,7 +12,7 @@ router.get('/Usuario', listaUsuarios);
 
 router.get('/Usuario/:id', IdUsuario);
 
-router.post('/crear-usuario', CrearUsuario);
+router.post('/Crear-usuario', CrearUsuario);
 
 router.post('/Login-usuario', LoginUser)
 
