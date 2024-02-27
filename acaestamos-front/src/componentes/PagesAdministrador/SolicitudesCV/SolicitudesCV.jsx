@@ -3,6 +3,9 @@ import './SolicitudesCV.css';
 const SolicitudesCV = () => {
   return (
     <>
+    <div className="container-fluid">
+                <h1 className='tituloUsuarioSolicitud' style={{ fontFamily: 'Heavitas', fontSize: '30px' }}>Solicitudes de nuevos currículums</h1>
+            </div>
       <main className="solicitudescv">
         <div className="container-fluid" style={{ borderRadius: '10px', backgroundColor: 'rgba(4, 157, 217, 0.15)', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', width: '100%' }}>
           <div className="solici-row">

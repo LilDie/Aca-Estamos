@@ -17,6 +17,7 @@ import PerfilAdmin from '../Views/PerfilAdmin';
 import PerfilEmpresas from '../Views/PerfilEmpresas'
 import AdminVisualizacion from '../Views/AdminVisualizacion';
 import AdminSolicitudescv from '../Views/AdminSolicitudescv';
+import AdminSolicitudesUsuarios from '../Views/AdminSolicitudesUsuarios';
 import RegisterFormEmpresa from '../Views/RegisterFormEmpresa';
 import Test from '../Views/TestCaro'
 import Nosotrosview from '../Views/Nosotrosview';
@@ -54,7 +55,8 @@ const router = createBrowserRouter([
   { path: '/Perfil-Admin', element: <PerfilAdmin /> },
   { path: '/Visualizacion-Usuario-Admin', element: <AdminVisualizacion /> },
   { path: '/Solicitudes-CV-Admin', element: <AdminSolicitudescv /> },
-  { path: '/Visualizacion-Empresas-Admin', element: <AdminVisualizacionEmpresas /> }
+  { path: '/Visualizacion-Empresas-Admin', element: <AdminVisualizacionEmpresas /> },
+  { path: '/Solicitudes-Usuarios-Admin', element: <AdminSolicitudesUsuarios /> }
 ]);
 
 export default router;
