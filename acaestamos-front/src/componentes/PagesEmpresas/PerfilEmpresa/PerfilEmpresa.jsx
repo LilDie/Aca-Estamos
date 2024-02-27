@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PerfilEmpresa = () => {
     return (
         <>
-            <div className="container-sm buscador" style={{ fontFamily: 'Poppins-Regular' }}>
+            {/* <div className="container-sm buscador" style={{ fontFamily: 'Poppins-Regular' }}>
                 <form className="d-flex" role="search" id="buscar-ofertas">
                     <input className="form-control me-2" type="search" placeholder="Buscador..." aria-label="Buscador..." />
                     <button className="btn btn-outline-success" type="submit">
@@ -13,10 +13,10 @@ const PerfilEmpresa = () => {
                     </button>
                     <button style={{ backgroundColor: '#049DD9', width: '120px' }} className="btn btn-outline-light" type="submit">Más filtros</button>
                 </form>
-            </div>
+            </div> */}
             {/* Termina el buscador */}
             {/* Comienzan los filtros */}
-            <div className="container-fluid filtroAdmin" style={{ fontFamily: 'Poppins-Regular' }}>
+            {/* <div className="container-fluid filtroAdmin" style={{ fontFamily: 'Poppins-Regular' }}>
                 <div className="row filtros-row">
                     <div className="col-2 filtros-col">
                         <select className="form-select" aria-label="Default select example">
@@ -55,7 +55,7 @@ const PerfilEmpresa = () => {
                         <input type="range" className="form-range" style={{ paddingBottom: '25px' }} min="0" max="20" id="customRange2" />
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* Terminan los filtros */}
 
             <h2 className="mi-perfil"><br />Mi perfil Empresa</h2>

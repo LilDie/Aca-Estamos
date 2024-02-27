@@ -3,6 +3,7 @@ import Loading from '../Efectos/Loading';
 import Footer from "../componentes/Footer/Footer";
 import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
 import PerfilEmpresa from "../componentes/PagesEmpresas/PerfilEmpresa/PerfilEmpresa";
+import FiltroEmpresa from '../componentes/Filtros/FiltroEmpresa/FiltroEmpresa';
 
 const PerfilEmpresas = () => {
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,7 @@ const PerfilEmpresas = () => {
           ) : (
               <>
                   <NavbarLogin />
+                  <FiltroEmpresa />
                   <PerfilEmpresa />
                   <Footer />
               </>

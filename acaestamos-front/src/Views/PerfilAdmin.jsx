@@ -3,6 +3,7 @@ import Loading from '../Efectos/Loading';
 import Footer from "../componentes/Footer/Footer";
 import PanelAdmin from "../componentes/PagesAdministrador/PanelAdmin/PanelAdmin";
 import NavbarAdmin from '../componentes/NavbarAdmin/NavbarAdmin';
+import FiltroAdmin from '../componentes/Filtros/FiltroAdmin/FiltroAdmin';
 
 const PerfilAdmin = () => {
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,7 @@ const PerfilAdmin = () => {
           ) : (
               <>
                   <NavbarAdmin />
+                  <FiltroAdmin />
                   <PanelAdmin/>
                   <Footer />
               </>
