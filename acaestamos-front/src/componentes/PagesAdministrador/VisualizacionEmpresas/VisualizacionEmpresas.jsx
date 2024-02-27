@@ -1,5 +1,6 @@
 import React from 'react'
 import './VisualizacionEmpresas.css'
+import { Link } from 'react-router-dom';
 
 const VisualizacionEmpresas = () => {
     return (
@@ -66,9 +67,9 @@ const VisualizacionEmpresas = () => {
                         </div>
                         <div className="container-fluid gap-5 d-md-flex justify-content-md-end p-4 containerAdmin" style={{ justifyContent: 'flex-end' }}>
                         
-                            <button className="btn btn-lg me-2 buttonCv" type="button" 
+                            <Link to='/Solicitudes-Empresas-Admin' className="btn btn-lg me-2 buttonCv" type="button" 
                                 href="#">Solicitudes de Empresas
-                            </button>
+                            </Link>
                         </div>
                     </div>
                     <table className="table">

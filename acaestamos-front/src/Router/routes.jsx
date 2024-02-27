@@ -27,6 +27,7 @@ import Editinfoempresas from '../Views/Editinfoempresas';
 import EditPerfilE from '../Views/EditPerfilE';
 import Empresasinfoview from '../Views/Empresasinfoview';
 import AdminVisualizacionEmpresas from '../Views/AdminVisualizacionEmpresas';
+import AdminSolicitudesEmpresas from '../Views/AdminSolicitudesEmpresas';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
   { path: '/Registro', element: <Register /> },
   { path: '/Registro-form', element: <RegisterForm /> },
   { path: '/Registro-form-Empresa', element: <RegisterFormEmpresa /> },
-  { path: '/Actualizar-Datos-Perfil', element: <ActualizarDatosPerfil /> },
+  { path: '/Actializar-Datos-Perfil', element: <ActualizarDatosPerfil /> },
   { path: '/Actualizar-Cv', element: <CrearCV /> },
   { path: '/Actualizar-Educacion', element: <EditEducacion /> },
   { path: '/Actualizar-Experiencia', element: <EditExperiencia /> },
@@ -56,7 +57,8 @@ const router = createBrowserRouter([
   { path: '/Visualizacion-Usuario-Admin', element: <AdminVisualizacion /> },
   { path: '/Solicitudes-CV-Admin', element: <AdminSolicitudescv /> },
   { path: '/Visualizacion-Empresas-Admin', element: <AdminVisualizacionEmpresas /> },
-  { path: '/Solicitudes-Usuarios-Admin', element: <AdminSolicitudesUsuarios /> }
+  { path: '/Solicitudes-Usuarios-Admin', element: <AdminSolicitudesUsuarios /> },
+  { path: '/Solicitudes-Empresas-Admin', element: <AdminSolicitudesEmpresas />},
 ]);
 
 export default router;

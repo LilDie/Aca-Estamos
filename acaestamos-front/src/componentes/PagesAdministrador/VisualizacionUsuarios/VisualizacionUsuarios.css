@@ -38,7 +38,7 @@
     }
   }
 
-  @media (min-width: 768px) and (max-width: 979px){
+  @media (min-width: 767px) and (max-width: 979px){
     #buscar-ofertas{
         width: 90%;
     }
@@ -122,12 +122,29 @@
     font-family: "Poppins-Regular";
 }
 
-@media (min-width: 280px) and (max-width: 800px) {
+@media (min-width: 280px) and (max-width: 766px) {
     .containerAdmin{
         text-align: center;
     }
     .adminButton{
         margin-top: 10px;
-        width: 60%;
+        margin-bottom: 10px;
+        width: 30%;
+    }
+    .buttonCv{
+        width: 40%;
+        /* padding: 0% !important;
+        margin: 0% !important;; */
+    }
+}
+@media(min-width: 767px) and (max-width:800px){
+    .adminButton{
+        margin: 0%;
+        width: 50%;
+    }
+    .buttonCv{
+        width: 50%;
+        height: 10%;
+        margin-top: 8px !important;
     }
 }

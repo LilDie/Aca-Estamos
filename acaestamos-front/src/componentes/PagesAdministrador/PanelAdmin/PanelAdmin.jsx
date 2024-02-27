@@ -14,7 +14,9 @@ const PanelAdmin = () => {
               </Link>
             </div>
             <div className="admin-col2">
+              <Link to = '/Solicitudes-Empresas-Admin'>
               <button id="btn-solicitudes" className="btn btn-primary btn-lg">Solicitudes</button>
+              </Link>
             </div>
             <div className="admin-col3">
               <button id="btn-ofertas" className="btn btn-secondary btn-lg">Info Empresas</button>
