@@ -10,14 +10,14 @@ import Navbar from './componentes/Navbar/Navbar';
 import Footer from './componentes/Footer/Footer';
 import DPADP from './Efectos/DPADP';
 import FRRF from './Efectos/FRRF';
-
+import PruebaAsync from './Efectos/PruebaAsync';
 function App() {
 
   return (
     <>
       <Header />
       <Navbar />
-      <FRRF />
+      <PruebaAsync />
       <Footer />
     </>
   );
