@@ -1,8 +1,33 @@
-import React from 'react';
 import './PerfilUsuario.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const PerfilUsuario = () => {
+    const [perfil, setPerfil] = useState(null);
+
+    useEffect(() => {
+        const obtenerPerfil = async () => {
+            try {
+                
+               // const token = localStorage.getItem('token'); 
+
+                const response = await axios.get('http://localhost:3000/Obtener-Perfil/65d6a5178175b32897e67e26', {
+                /*    headers: {
+                        //Authorization: `Bearer ${token}`,
+                    },*/
+                });
+
+                setPerfil(response.data);
+                console.log(response)
+                console.log(perfil)
+            } catch (error) {
+                console.error('Error al obtener el perfil:', error);
+            }
+        };
+
+        obtenerPerfil();
+    }, []);
     return (
         <>
             <h2 className="mi-perfil"><br />Mi perfil</h2>

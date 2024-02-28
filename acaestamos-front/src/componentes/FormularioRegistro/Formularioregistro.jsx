@@ -118,6 +118,7 @@ const Formularioregistro = () => {
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Rut</label>
                     <input type="text" className="form-control" id="rut" placeholder="11.111.111-1" value={Rut} onChange={(e) => setRut(formatRut(e.target.value))} />
+                    <input type="text" className="form-control" id="rut" placeholder="11.111.111-1" value={Rut} onChange={(e) => setRut(formatRut(e.target.value))} />
                     <div className="invalid-feedback">Please choose a username.</div>
                   </div>
                   <div className="col-md-6 mb-3">
