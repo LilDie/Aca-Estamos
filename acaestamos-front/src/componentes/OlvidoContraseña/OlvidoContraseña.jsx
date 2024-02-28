@@ -1,5 +1,5 @@
 import React from 'react';
-import './OlvidoContrasena.css'
+import './OlvidoContraseña.css'
 
 const OlvidoContraseña = () => {
     return (

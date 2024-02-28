@@ -1,29 +1,8 @@
-import React from 'react';
-import './VisualizacionUsuarios.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import './VisualizacionUsuarios.css'
 import { Link } from 'react-router-dom';
 
 const VisualizacionUsuarios = () => {
-    const [records, setRecords] = useState([]);
-    const navegate = useNavigate()
-
-
-    useEffect(() => {
-        axios.get('http://localhost:3000/Usuario')
-            .then(res => {
-                setRecords(res.data.data);
-                console.log(res);
-
-            })
-            .catch(err => {
-                console.error('Error fetching data:', err);
-            });
-    }, []);
-
-
-
     return (
         <>
             
@@ -43,61 +22,78 @@ const VisualizacionUsuarios = () => {
 
                         </div>
                     </div>
-                    <div className="conteiner fluid">
-                        <div className="table-responsive">
-                            <table className="table table-bordered">
-
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Rut</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        records.map((record, index) => (
-                                            <tr key={index}>
-                                                <td>{record.Nombre}</td>
-                                                <td>{record.Apellido}</td>
-                                                <td>{record.Rut}</td>
-                                                <td>{record.Email}</td>
-                                                <td className='Botones-tablero'>
-                                                    <button id='Editar-Boton' className="btn btn-success" type="button">Editar</button>
-                                                </td>
-                                                <td>
-                                                    <button onClick= {e => handleSumbit(record._id)} id='Eliminar-boton' className="btn btn-danger" type="button">Eliminar</button>
-                                            </td>
-                                            </tr>
-                                ))
-                                    }
-                            </tbody>
-
-                        </table>
-                    </div>
-
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th className='tabla' scope="col">Nombre</th>
+                                <th className='tabla' scope="col">Apellido paterno</th>
+                                <th className='tabla' scope="col">Apellido Materno</th>
+                                <th className='tabla' scope="col">Actividad</th>
+                                <th className='tabla' scope="col">Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody className="table-group-divider">
+                            <tr>
+                                <th scope="row" className="userName">Mark</th>
+                                <td className="userName">Loki</td>
+                                <td className="userName">Otto</td>
+                                <td className="">
+                                    <button className="btn btn-sm me-2 botonActividad" type="button" style={{ backgroundColor: '#109CF1' }}
+                                        href="#">Activo
+                                    </button>
+                                </td>
+                                <td><a href="/pages/Editarperfil.html"><i className="fa-solid fa-pen-to-square fa-xl iconAdmin" style={{ color: 'black' }}></i></a> </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" className="userName">Mark</th>
+                                <td className="userName">Loki</td>
+                                <td className="userName">Otto</td>
+                                <td className="">
+                                    <button className="btn btn-sm me-2 botonActividad" type="button" style={{ backgroundColor: '#109CF1' }}
+                                        href="#">Activo
+                                    </button>
+                                </td>
+                                <td><a href="/pages/Editarperfil.html"><i className="fa-solid fa-pen-to-square fa-xl iconAdmin" style={{ color: 'black' }}></i></a> </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" className="userName">Mark</th>
+                                <td className="userName">Loki</td>
+                                <td className="userName">Otto</td>
+                                <td className="">
+                                    <button className="btn btn-sm me-2 botonActividad" type="button" style={{ backgroundColor: '#109CF1' }}
+                                        href="#">Activo
+                                    </button>
+                                </td>
+                                <td><a href="/pages/Editarperfil.html"><i className="fa-solid fa-pen-to-square fa-xl iconAdmin" style={{ color: 'black' }}></i></a> </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" className="userName">Mark</th>
+                                <td className="userName">Loki</td>
+                                <td className="userName">Otto</td>
+                                <td className="">
+                                    <button className="btn btn-sm me-2 botonActividad" type="button" style={{ backgroundColor: '#109CF1' }}
+                                        href="#">Activo
+                                    </button>
+                                </td>
+                                <td><a href="/pages/Editarperfil.html"><i className="fa-solid fa-pen-to-square fa-xl iconAdmin" style={{ color: 'black' }}></i></a> </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" className="userName">Mark</th>
+                                <td className="userName">Loki</td>
+                                <td className="userName">Otto</td>
+                                <td className="">
+                                    <button className="btn btn-sm me-2 botonActividad" type="button" style={{ backgroundColor: '#FF3B47' }}
+                                        href="#">Inactivo
+                                    </button>
+                                </td>
+                                <td><a href="/pages/Editarperfil.html"><i className="fa-solid fa-pen-to-square fa-xl iconAdmin" style={{ color: 'black' }}></i></a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </main >
+            </main>
         </>
-    );
-function handleSumbit(_id) {
-    const conf = window.confirm('Seguro que quieres Elimnar a este Usuario?')
-
-    if (conf) {
-        axios.delete(`http://localhost:3000/Borrar-Usuario/`+_id)
-            .then(res => {
-                alert('Usuario Eliminado');
-                window.location.reload();
-                console.log(res);
-            })
-            .catch(err => {
-                console.error('Error deleting data:', err);
-            });
-    }
-
+    )
 }
-};
 
 export default VisualizacionUsuarios
