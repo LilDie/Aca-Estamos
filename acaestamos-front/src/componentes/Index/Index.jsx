@@ -175,7 +175,7 @@ const Index = () => {
                                 <div className="over-1">
                                     <div className="text-over">
                                         <h3 className="h3-over">Ricardo Caceres</h3>
-                                        <p className="p-1">Gracias Acá Estamos conseguí el trabajo de mis sueños</p>
+                                        <p className="p-1">Gracias a Acá Estamos conseguí el trabajo de mis sueños.</p>
                                     </div>
 
                                 </div>
@@ -184,8 +184,7 @@ const Index = () => {
                                 <div className="over-2">
                                     <div className="text-over">
                                         <h3 className="h3-over">Fernando Reyes</h3>
-                                        <p className="p-2">Gracias a Esta pagina pude hacer que mi curriculun fuese más visible y atractivo para las
-                                            empresas</p>
+                                        <p className="p-2">Gracias a esta página pude hacer que mi currículum fuese más visible y atractivo para las empresas.</p>
                                     </div>
                                 </div>
                             </div>
@@ -193,8 +192,8 @@ const Index = () => {
                                 <div className="over-3">
                                     <div className="text-over">
                                         <h3 className="h3-over">Dayana Mendoza</h3>
-                                        <p className="p-3">Pude consenguir una pega mi comuna de algo que me apasiona, su ayuda con el curriculunfue la
-                                            clave para conseguir conectar con la empresa</p>
+                                        <p className="p-3">Pude conseguir un trabajo en mi comuna de algo que me apasiona, su ayuda con el currículum fue la
+                                            clave para conseguir conectar con la empresa.</p>
                                     </div>
                                 </div>
                             </div>

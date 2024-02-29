@@ -11,6 +11,7 @@ const LoginEmpresa = require('../controllers/emp-login');
 const GuardarPerfil = require('../controllers/user-perfil-guardar');
 const ObtenerPerfil = require('../controllers/user-perfil-obtener');
 const multer = require('multer');
+const isAuth = require('../middlewares/validar-jwt');
 
 // Multer para Usuarios
 const storage = multer.memoryStorage();
@@ -39,6 +40,13 @@ router.post('/Login-empresa', LoginEmpresa);
 
 //Router   ADMINISTRADOR //
 
+
+
+// Router ruta protegida
+router.get("/ruta-protegida", isAuth, (req, res) => {
+    res.send("Ruta protegida");
+}
+);
 
 module.exports = router;
 
