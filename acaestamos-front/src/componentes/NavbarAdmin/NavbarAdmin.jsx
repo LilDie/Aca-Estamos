@@ -23,22 +23,21 @@ const NavbarAdmin = () => {
                                         <p className="mb-0">#RencaParticipa</p>
                                     </div>
                                     <div className="container-fluid gap-5 d-md-flex justify-content-md-end p-4 secondNav" style={{ justifyContent: 'flex-end' }} id="botonesnav">
-                                        {/* <div className="position-relative"> */}
-                                        <Link to="/Login" className="btn btn-m  me-2 userButton" type="button" style={{ backgroundColor: '#D97D0D', color: 'white' }}>
-                                        <i className="fa-solid fa-bell"></i>
-                                        </Link>
-                                        {/* <button className="btn btn-m me-2 userButton" type="button" style={{ backgroundColor: '#D97D0D' }}>
-                                            <a href="#"><i className="fa-solid fa-bell"></i></a>
-                                        </button> */}
+                                        <div className="bell">
+                                            <Link to="/Login" className="btn btn-m  me-2 userButton" type="button" style={{ backgroundColor: '#D97D0D', color: 'white' }}>
+                                                <i className="fa-solid fa-bell"></i>
+                                            </Link>
+                                        </div>
+                                       
                                         <button className="btn nav-item dropdown btn-m userButton userN" style={{ backgroundColor: '#049DD9' }}>
                                             <a className="nav-link dropdown-toggle userName" href="#" id="navbarDropdown" role="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Nombre de usuario
+                                                Nombre administrador
                                             </a>
                                             <div className="dropdown-menu dropdown-menu-right position-absolute top-100 start-0" aria-labelledby="navbarDropdown">
                                                 {/* Agrega cualquier elemento adicional del menú desplegable según sea necesario */}
                                                 <Link to="./" className="dropdown-item" >
-                                                <i class="fa-solid fa-building" style={{ color: "#D95525" }}></i> <b>Empresas</b>
+                                                    <i class="fa-solid fa-building" style={{ color: "#D95525" }}></i> <b>Empresas</b>
                                                 </Link>
                                                 <a className="dropdown-item" href="#"><i class="fa-solid fa-user" style={{ color: "#049DD9" }}></i> <b>Postulantes</b></a>
 
@@ -61,16 +60,9 @@ const NavbarAdmin = () => {
 
                         <div className="container-fluid" style={{ backgroundColor: '#f2f7ea' }}>
                             <nav className="navbar navbar-expand-lg  ">
-                                <div className="container-fluid " style={{ backgroundColor: '#f2f7ea' }}>
-                                    <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
-                                        data-target="#Nav2" aria-controls="Nav2" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <span className="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div className="collapse navbar-collapse justify-content-center" id="Nav2">
-                                        <h2 className='AdminNav'> Administrador Acá Estamos
-                                        </h2>
-                                    </div>
+                                <div className="container-fluid justify-content-center " style={{ backgroundColor: '#f2f7ea' }}>
+                                    <h2 className='AdminNav'> Administrador Acá Estamos
+                                    </h2>
                                 </div>
                             </nav>
                         </div>

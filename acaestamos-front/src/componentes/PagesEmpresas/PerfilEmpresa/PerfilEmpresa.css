@@ -1,3 +1,32 @@
+/* buscador */
+.buscador{
+  margin: 30px;
+}
+
+/* responsive filtro */
+.filtroAdmin{
+  margin: 30px;
+}
+.filtros {
+  margin: 30px;
+
+}
+
+@media (min-width: 280px) and (max-width: 800px) {
+  .filtros-row {
+    flex-direction: column;
+  }
+
+  .filtros-col {
+    width: 90%;
+    margin-top: 13px;
+  }
+  .adminButton{
+      width: 70%;
+  }
+}
+
+
 /*Perfil Empresa*/
 
 .row-perfile {

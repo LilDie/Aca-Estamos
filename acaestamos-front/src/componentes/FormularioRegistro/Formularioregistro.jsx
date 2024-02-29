@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Formularioregistro';
+import './Formularioregistro.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAlert } from '../../Efectos/useAlert'
 
 const Formularioregistro = () => {
 
@@ -12,7 +13,32 @@ const Formularioregistro = () => {
   const [Fechanacimiento, setFechanacimiento] = useState('');
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
+  const [Repassword, setRepassword] = useState('');
+  const [Reemail, setReemail] = useState('');
   const navigate = useNavigate();
+
+  // Usa el hook useAlert para obtener el estado y la API de alerta
+  const [alertState, alertApi] = useAlert("alertsElement");
+
+  //Definicion de funciones
+  const showAlert = () => {
+
+    let hasError = true;
+
+    if (!Nombre || !Apellido || !Telefono || !Rut || !Fechanacimiento || !Email || !Reemail || !Password || !Repassword) {
+      alertApi.show("¡No llenaste correctamente los datos solicitados!", 'error');
+      hasError = false;
+    }
+    if (Email !== Reemail) {
+      alertApi.show("¡Los datos de Correo y Repetir Correo, no son iguales!", 'error');
+      hasError = false
+    }
+    if (Password !== Repassword) {
+      alertApi.show("¡Los datos de Contraseña y Repetir Contraseña, no son iguales!", 'error');
+      hasError = false
+    }
+    return hasError;
+  };
   const formatRut = (rut) => {
     // Formatear rut
     rut = rut.replace(/[^\dkK]/g, '');
@@ -31,25 +57,29 @@ const Formularioregistro = () => {
     // Validación del RUT
     const rutRegex = /^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9kK]{1}$/;
     if (!rutRegex.test(Rut)) {
-      alert('El Rut no cumple con el formato requerido');
+      alertApi.show('El Rut no cumple con el formato requerido', 'error');
       return;
     }
-    try {
-      const response = await axios.post('http://localhost:3000/Crear-usuario', {
-        Nombre,
-        Apellido,
-        Telefono,
-        Rut,
-        Fechanacimiento,
-        Email,
-        Password,
-      });
+    // Se efectua la alerta de contenido vacio o incorrecto
+    if (showAlert() === true) {
+      try {
+        const response = await axios.post('http://localhost:3000/Crear-usuario', {
+          Nombre,
+          Apellido,
+          Telefono,
+          Rut,
+          Fechanacimiento,
+          Email,
+          Password,
+        });
 
-      alert(JSON.stringify(response.data, null, 2));
-      navigate('/Login-form')
-    } catch (error) {
-      console.error('Error al enviar la solicitud:', error.response?.data || error.message);
+        alert(JSON.stringify(response.data, null, 2));
+        navigate('/Login-form')
+      } catch (error) {
+        console.error('Error al enviar la solicitud:', error.response?.data || error.message);
+      }
     }
+
   };
 
 
@@ -74,17 +104,17 @@ const Formularioregistro = () => {
                 <div className="row">
                   <div className="col-md-6">
                     <label htmlFor="validationCustom01" className="form-label">Nombre</label>
-                    <input type="text" className="form-control" id="nombre" placeholder="Nombre" required value={Nombre} onChange={(e) => setNombre(e.target.value)} />
+                    <input type="text" className="form-control" id="nombre" placeholder="Nombre" value={Nombre} onChange={(e) => setNombre(e.target.value)} />
                     <div className="valid-feedback">Looks good!</div>
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Apellido</label>
-                    <input type="text" className="form-control" id="apellido" placeholder="Apellido" required value={Apellido} onChange={(e) => setApellido(e.target.value)} />
+                    <input type="text" className="form-control" id="apellido" placeholder="Apellido" value={Apellido} onChange={(e) => setApellido(e.target.value)} />
                     <div className="valid-feedback">Looks good!</div>
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Teléfono</label>
-                    <input type="text" className="form-control" id="telefono" placeholder="+59 999999999" required value={Telefono} onChange={(e) => setTelefono(e.target.value)} />
+                    <input type="text" className="form-control" id="telefono" placeholder="+59 999999999" value={Telefono} onChange={(e) => setTelefono(e.target.value)} />
                     <div className="invalid-feedback">Please choose a username.</div>
                   </div>
                   <div className="col-md-6">
@@ -94,31 +124,31 @@ const Formularioregistro = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label htmlFor="fechaNacimiento" className="form-label">Fecha Nacimiento:</label>
-                    <input type="date" className="form-control" id="fechaNacimiento" placeholder="DD/MM/AAAA" required value={Fechanacimiento} onChange={(e) => setFechanacimiento(e.target.value)} />
+                    <input type="date" className="form-control" id="fechaNacimiento" placeholder="DD/MM/AAAA" value={Fechanacimiento} onChange={(e) => setFechanacimiento(e.target.value)} />
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Correo</label>
-                    <input type="text" className="form-control" id="correo" placeholder="example@Email.com" required value={Email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="text" className="form-control" id="correo" placeholder="example@Email.com" value={Email} onChange={(e) => setEmail(e.target.value)} />
                     <div className="invalid-feedback">Please choose a username.</div>
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Repetir Correo</label>
-                    <input type="text" className="form-control" id="repetirCorreo" placeholder="example@Email.com" required />
+                    <input type="text" className="form-control" id="repetirCorreo" placeholder="example@Email.com" value={Reemail} onChange={(e) => setReemail(e.target.value)} />
                     <div className="invalid-feedback">Please choose a username.</div>
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" id="contraseña" placeholder="*********" required value={Password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" className="form-control" id="contraseña" placeholder="*********" value={Password} onChange={(e) => setPassword(e.target.value)} />
                     <div className="invalid-feedback">Please choose a username.</div>
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="validationCustom02" className="form-label">Repetir Contraseña</label>
-                    <input type="password" className="form-control" id="repetircontraseña" placeholder="*********" required />
+                    <input type="password" className="form-control" id="repetircontraseña" placeholder="*********" value={Repassword} onChange={(e) => setRepassword(e.target.value)} />
                     <div className="invalid-feedback">Please choose a username.</div>
                   </div>
                 </div>
                 <div className="row" id="contendor-registro">
-                  <button type="submit" className="btn btn-primary btn-lg" id="boton-registro">Registrarse</button>
+                  <button type="submit" className="btn btn-primary btn-lg" id="boton-registro" onClick={showAlert}>Registrarse</button>
                 </div>
                 <div className="col">
                   <div className="google-icon">
@@ -126,6 +156,13 @@ const Formularioregistro = () => {
                   </div>
                 </div>
               </form>
+
+              {/* Muestra la alerta si está visible */}
+              {alertState.visible && (
+                <div id="alertsElement" className={`alert ${alertState.type}`}>
+                  {alertState.message}
+                </div>
+              )}
             </div>
           </div>
         </div>

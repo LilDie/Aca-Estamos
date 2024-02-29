@@ -1,13 +1,13 @@
 import Footer from "../componentes/Footer/Footer";
-import Header from "../componentes/Header/Header";
-import Navbar from "../componentes/Navbar/Navbar";
+import NavbarAdmin from "../componentes/NavbarAdmin/NavbarAdmin";
 import SolicitudesCV from "../componentes/PagesAdministrador/SolicitudesCV/SolicitudesCV";
+import FiltroAdmin from "../componentes/Filtros/FiltroAdmin/FiltroAdmin"
 
 const AdminSolicitudescv = () => {
   return (
     <>
-    <Header />
-    <Navbar />
+    <NavbarAdmin />
+    <FiltroAdmin />
     <SolicitudesCV />
     <Footer />
     </>

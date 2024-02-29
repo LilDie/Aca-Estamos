@@ -1,35 +1,8 @@
-/* buscador */
-.buscador{
-    margin: 30px;
-}
-
-/* responsive filtro */
-.filtroAdmin{
-    margin: 30px;
-}
-.filtros {
-    margin: 30px;
-  
-  }
-  
-  @media (min-width: 280px) and (max-width: 800px) {
-    .filtros-row {
-      flex-direction: column;
-    }
-  
-    .filtros-col {
-      width: 90%;
-      margin-top: 13px;
-    }
-    .adminButton{
-        width: 70%;
-    }
-  }
-
 /* ************contenido principal************ */
 
 .userList{
     font-family: "Heavitas";
+    margin-top: 15px;
 }
 
 .adminButton{
@@ -64,14 +37,30 @@
     font-family: "Poppins-Regular";
 }
 
-@media (min-width: 280px) and (max-width: 800px) {
+@media (min-width: 280px) and (max-width: 766px) {
     .containerAdmin{
         text-align: center;
     }
     .adminButton{
         margin-top: 10px;
-        width: 60%;
+        margin-bottom: 10px;
+        width: 30%;
     }
-    
+    .buttonCv{
+        width: 40%;
+        /* padding: 0% !important;
+        margin: 0% !important;; */
+    }
+}
+@media(min-width: 767px) and (max-width:800px){
+    .adminButton{
+        margin: 0%;
+        width: 50%;
+    }
+    .buttonCv{
+        width: 50%;
+        height: 10%;
+        margin-top: 8px !important;
+    }
 
 }

@@ -58,7 +58,7 @@ header {
     padding: 15px;
   }
   
-  @media(min-width: 280px) and (max-width: 460px) {
+  @media(min-width: 280px) and (max-width: 518px) {
     .userButton {
       font-size: 12px;
       margin-top: 10px;
@@ -70,11 +70,23 @@ header {
       margin-left: 20px;
     }
   }
+
+  @media(min-width: 519px) and (max-width: 766px) {
+
+    .userN{
+    margin-top: 10px;
+    }
+    .userName{
+      font-size: 16px;
+    }
   
+    }
   
-  @media(min-width: 767px) and (max-width:812px) {
+  @media(min-width: 767px) and (max-width:899px) {
     .userButton {
       text-align: center;
+      justify-content: center;
+      margin-right: 0%;
     }
   
     .userN {
@@ -86,7 +98,6 @@ header {
   
     .userName {
       font-size: 13px;
-      /* margin-top: 10px; */
     }
   
     .userButton {
@@ -94,15 +105,17 @@ header {
     }
   
     .userN {
-      width: 83%;
+      width: 70%;
       margin-top: 0%;
       margin-left: 0%;
+      justify-content: center;
       text-align: center;
     }
   
     .userName {
-      font-size: 12px;
-      /* margin-top: 10px; */
+      font-size: 14px;
+      justify-content: center;
+      margin: 3px;
     }
   
   }
