@@ -1,17 +1,16 @@
 import Footer from "../componentes/Footer/Footer";
 import NavbarAdmin from "../componentes/NavbarAdmin/NavbarAdmin";
-import VisualizacionUsuario from "../componentes/PagesAdministrador/VisualizacionUsuarios/VisualizacionUsuarios";
+import VisualizacionEmpresas from "../componentes/PagesAdministrador/VisualizacionEmpresas/VisualizacionEmpresas";
 import FiltroAdmin from "../componentes/Filtros/FiltroAdmin/FiltroAdmin";
 
-const AdminVisualizacion = () => {
+const AdminVisualizacionEmpresas = () => {
   return (
     <>
     <NavbarAdmin />
     <FiltroAdmin />
-    <VisualizacionUsuario />
+    <VisualizacionEmpresas />
     <Footer />
     </>
   )
 }
-
-export default AdminVisualizacion;
+export default AdminVisualizacionEmpresas;

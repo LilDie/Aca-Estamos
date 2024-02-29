@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './FormularioEmpresa.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAlert } from '../../../Efectos/useAlert';
 
 const FormularioEmpresa = () => {
+
+  //Definicion de constantes
   const [NombreEmpresa, setNombreEmpresa] = useState('');
   const [Telefono, setTelefono] = useState('');
   const [RutEmpresa, setRutEmpresa] = useState('');
@@ -11,7 +14,32 @@ const FormularioEmpresa = () => {
   const [Url, setUrl] = useState('');
   const [Email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
+  const [Repassword, setRepassword] = useState('');
+  const [Reemail, setReemail] = useState('');
   const navigate = useNavigate();
+
+  //Usa el hook useAlert para obtener el estado y la API de alerta
+  const [alertState, alertApi] = useAlert("alertsElement");
+
+  //Definicion de funciones
+  const showAlert = () => {
+
+    let hasError = true;
+
+    if (!NombreEmpresa || !RutEmpresa || !Telefono || !Rubro || !Email || !Reemail || !Url || !Password || !Repassword) {
+      alertApi.show("¡No llenaste correctamente los datos solicitados!", 'error');
+      hasError = false;
+    }
+    if (Email !== Reemail) {
+      alertApi.show("¡Los datos de Correo y Repetir Correo, no son iguales!", 'error');
+      hasError = false
+    }
+    if (Password !== Repassword) {
+      alertApi.show("¡Los datos de Contraseña y Repetir Contraseña, no son iguales!", 'error');
+      hasError = false
+    }
+    return hasError;
+  };
 
   const formatRut = (rut) => {
     // Formatear rut
@@ -24,32 +52,35 @@ const FormularioEmpresa = () => {
 
     return rut;
   };
-  
 
 
-  const handleSumbit = async (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const rutRegex = /^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9kK]{1}$/;
-    if (!rutRegex.test(Rut)) {
-      alert('El Rut no cumple con el formato requerido');
+    if (!rutRegex.test(RutEmpresa)) {
+      alertApi.show('El Rut no cumple con el formato requerido', 'error');
       return;
     }
-
-    try {
-      const response = await axios.post('http://localhost:3000/Crear-Empresa', {
-        NombreEmpresa,
-        Telefono,
-        RutEmpresa,
-        Rubro,
-        Url,
-        Email,
-        Password
-      });
-      alert(JSON.stringify(response.data, null, 2));
-      navigate('/Login-Empresas')
-    } catch (error) {
-      console.error('Error al enviar la solicitud:', error.response?.data || error.message);
+    // Se efectua la alerta de contenido vacio o incorrecto
+    if (showAlert() === true) {
+      try {
+        const response = await axios.post('http://localhost:3000/Crear-Empresa', {
+          NombreEmpresa,
+          Telefono,
+          RutEmpresa,
+          Rubro,
+          Url,
+          Email,
+          Password
+        });
+        alert(JSON.stringify(response.data, null, 2));
+        navigate('/Login-Empresas')
+      } catch (error) {
+        console.error('Error al enviar la solicitud:', error.response?.data || error.message);
+      }
     }
+
   };
 
 
@@ -64,7 +95,7 @@ const FormularioEmpresa = () => {
             style={{ margin: '50px auto', backgroundColor: 'rgba(131, 166, 55, 0.15)', borderRadius: '10px', borderStyle: 'solid', borderColor: 'black', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)' }}>
             <h2 className="text-center">Datos Registro</h2>
             <div className="from-Registro">
-              <form onSubmit={handleSumbit}>
+              <form onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="row">
                     <div className="col-md-6">
@@ -110,7 +141,7 @@ const FormularioEmpresa = () => {
                     <div className="col-md-6">
                       <label htmlFor="validationCustom02" className="form-label">Repetir Correo</label>
                       <input type="text" className="form-control" id="validationCustom02"
-                        placeholder="example@Email.com" />
+                        placeholder="example@Email.com" value={Reemail} onChange={(e) => setReemail(e.target.value)} />
                       <div className="invalid-feedback">
                         Please choose a username.
                       </div>
@@ -125,14 +156,14 @@ const FormularioEmpresa = () => {
                     </div>
                     <div className="col-md-6">
                       <label htmlFor="validationCustom02" className="form-label">Contraseña</label>
-                      <input type="text" className="form-control" id="validationCustom02" placeholder="*********" value={Password} onChange={(e) => setPassword(e.target.value)} />
+                      <input type="password" className="form-control" id="validationCustom02" placeholder="*********" value={Password} onChange={(e) => setPassword(e.target.value)} />
                       <div className="invalid-feedback">
                         Please choose a username.
                       </div>
                     </div>
                     <div className="col-md-6">
                       <label htmlFor="validationCustom02" className="form-label">Repetir Contraseña</label>
-                      <input type="text" className="form-control" id="validationCustom02" placeholder="*********" />
+                      <input type="password" className="form-control" id="validationCustom02" placeholder="*********" value={Repassword} onChange={(e) => setRepassword(e.target.value)} />
                       <div className="invalid-feedback">
                         Please choose a username.
                       </div>
@@ -140,7 +171,7 @@ const FormularioEmpresa = () => {
                   </div>
                 </div>
                 <div className="row" id="contendor-registro">
-                  <button type="submit" className="btn btn-primary btn-lg" id="boton-registro">Registrarse</button>
+                  <button type="submit" className="btn btn-primary btn-lg" id="boton-registro" onClick={showAlert}>Registrarse</button>
                 </div>
                 <div className="row">
                   <div className="col">
@@ -150,6 +181,13 @@ const FormularioEmpresa = () => {
                   </div>
                 </div>
               </form>
+
+              {/* Muestra la alerta si está visible */}
+              {alertState.visible && (
+                <div id="alertsElement" className={`alert ${alertState.type}`}>
+                  {alertState.message}
+                </div>
+              )}
             </div>
           </div>
         </div>
