@@ -7,7 +7,7 @@ import Nosotros from "../componentes/Nosotros/Nosotros";
 const Nosotrosview = () => {
   return (
     <>
-    <Header />
+    
     <Navbar />
     <Nosotros />
     <Footer />

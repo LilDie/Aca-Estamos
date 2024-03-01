@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Efectos/Loading';
-import Footer from "../componentes/Footer/Footer";
-import NavbarAdmin from '../componentes/NavbarAdmin/NavbarAdmin';
-import PanelAdmin from "../componentes/PagesAdministrador/PanelAdmin/PanelAdmin";
+import LayoutAdmin from "../Layout/LayoutAdmin"
 import FiltroAdmin from '../componentes/Filtros/FiltroAdmin/FiltroAdmin';
 
 const PerfilAdmin = () => {
@@ -19,12 +17,10 @@ const PerfilAdmin = () => {
           {loading ? (
               <Loading />
           ) : (
-              <>
-                  <NavbarAdmin />
+              <LayoutAdmin>                 
                   <FiltroAdmin />
-                  <PanelAdmin/>
-                  <Footer />
-              </>
+                  <PanelAdmin/>               
+              </LayoutAdmin>
           )}
       </>
   );

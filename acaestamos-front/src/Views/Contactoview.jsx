@@ -1,17 +1,12 @@
-import Footer from "../componentes/Footer/Footer";
-import Header from "../componentes/Header/Header";
-import Navbar from "../componentes/Navbar/Navbar";
+import Layout from "../Layout/Layout";
 import Contacto from "../componentes/Contacto/Contacto";
 
 
 const Contactoview = () => {
   return (
-    <>
-    <Header />
-    <Navbar />
-    <Contacto />
-    <Footer />
-    </>
+    <Layout>
+      <Contacto />
+    </Layout>
   )
 }
 

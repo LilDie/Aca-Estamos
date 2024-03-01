@@ -1,14 +1,11 @@
-import Footer from "../componentes/Footer/Footer";
-import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
+import Layout from "../Layout/Layout";
 import Experiencia from "../componentes/PagesUsuario/Experiencia/Experiencia";
 
 const EditExperiencia = () => {
   return (
-    <>
-    <NavbarLogin />
-    <Experiencia />
-    <Footer />
-    </>
+    <Layout>
+      <Experiencia />
+    </Layout>
   )
 }
 

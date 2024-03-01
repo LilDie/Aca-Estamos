@@ -6,7 +6,7 @@ import InicioSesion from "../componentes/InicioSesion/InicioSesion"
 const Login = () => {
   return (
     <>
-    <Header />
+    
     <Navbar />
     <InicioSesion />
     <Footer />

@@ -1,15 +1,12 @@
-import Footer from "../componentes/Footer/Footer";
-import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
+import LayoutEmpresa from "../Layout/LayoutEmpresa"
 import EditInfoEmpresa from "../componentes/PagesEmpresas/EditInfoEmpresa/EditInfoEmpresa";
 
 
 const Editinfoempresas = () => {
   return (
-    <>
-    <NavbarLogin />
-    <EditInfoEmpresa />
-    <Footer />
-    </>
+    <LayoutEmpresa>
+      <EditInfoEmpresa />
+    </LayoutEmpresa>
   )
 }
 

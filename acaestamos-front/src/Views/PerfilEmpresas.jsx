@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Efectos/Loading';
-import Footer from "../componentes/Footer/Footer";
 import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
 import PerfilEmpresa from "../componentes/PagesEmpresas/PerfilEmpresa/PerfilEmpresa";
 import FiltroEmpresa from '../componentes/Filtros/FiltroEmpresa/FiltroEmpresa';
+import LayoutEmpresa from '../Layout/LayoutEmpresa';
+
 
 const PerfilEmpresas = () => {
   const [loading, setLoading] = useState(true);
@@ -20,10 +21,11 @@ const PerfilEmpresas = () => {
               <Loading />
           ) : (
               <>
-                  <NavbarLogin />
+                <LayoutEmpresa>
+                  
                   <FiltroEmpresa />
                   <PerfilEmpresa />
-                  <Footer />
+                  </LayoutEmpresa>
               </>
           )}
       </>

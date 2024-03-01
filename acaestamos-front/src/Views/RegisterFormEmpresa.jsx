@@ -1,16 +1,11 @@
-import Footer from "../componentes/Footer/Footer";
-import Header from "../componentes/Header/Header";
-import Navbar from "../componentes/Navbar/Navbar";
+import LayoutEmpresa from "../Layout/LayoutEmpresa"
 import FormularioEmpresa from "../componentes/PagesEmpresas/FormReg-empresa/FormularioEmpresa";
 
 const RegisterFormEmpresa = () => {
   return (
-    <>
-    <Header />
-    <Navbar />
-    <FormularioEmpresa />
-    <Footer />
-    </>
+    <LayoutEmpresa>
+      <FormularioEmpresa />
+    </LayoutEmpresa>
   )
 }
 

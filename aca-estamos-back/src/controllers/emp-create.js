@@ -1,7 +1,20 @@
 const Empresa = require("../models/user-models-empresa")
+const bcrypt = require('bcrypt');
 
 const CrearEmpresa = async (req, res) => {
     const { NombreEmpresa, Telefono, RutEmpresa, Rubro, Url, Email, Password } = req.body;
+
+    const salt = bcrypt.genSaltSync();
+    const passwordEncripted = bcrypt.hashSync(Password, salt)
+
+    const empresaExisting = await Empresa.findOne({ RutEmpresa: RutEmpresa });
+    if (empresaExisting) {
+        return res.status(400).json({
+            code: 400,
+            msg: "El usuario ya existe",
+            data: null
+        });
+    };
 
     try {
         const NuevaEmpresa = await Empresa.create({
@@ -11,7 +24,7 @@ const CrearEmpresa = async (req, res) => {
             Rubro: Rubro,
             Url: Url,
             Email: Email,
-            Password: Password
+            Password: passwordEncripted
         });
         res.status(200).json({
             code:200,

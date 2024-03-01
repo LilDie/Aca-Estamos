@@ -1,4 +1,6 @@
 const Empresa = require("../models/user-models-empresa");
+const bcrypt = require('bcrypt');
+const generarJWT = require("../services/generate-jwt");
 
 const LoginEmpresa = async (req, res) => {
     const { Email, Password } = req.body;
@@ -20,16 +22,16 @@ const LoginEmpresa = async (req, res) => {
             });
         }
 
-        
-        const PasswordCorrect = (Password === empresa.Password);
+        const passwordVerified = bcrypt.compareSync(Password, empresa.Password)
 
-        if (!PasswordCorrect) {
+        if (!passwordVerified) {
             return res.status(400).json({
                 code: 400,
                 msg: "Contraseña incorrecta"
             });
         }
 
+        const token = await generarJWT(empresa._id);
         
         res.status(200).json({
             code: 200,
@@ -38,7 +40,8 @@ const LoginEmpresa = async (req, res) => {
                 companyName: empresa.NombreEmpresa,
                 companyId: empresa._id
  
-            }
+            },
+            token: token
         });
     } catch (error) {
         console.error(error);

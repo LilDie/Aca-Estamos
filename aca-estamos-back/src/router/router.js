@@ -25,7 +25,7 @@ router.post('/Crear-usuario', CrearUsuario);
 router.post('/Login-usuario', LoginUser)
 router.put('/Actualizar-Usuario/:id', ActualizarUser);
 router.delete('/Borrar-Usuario/:id', DeleteUser);
-router.post('/Guardar-Perfil', upload.fields([
+router.post('/Guardar-Perfil/:id', upload.fields([
     { name: 'ArchivoPDF1', maxCount: 1 },
     { name: 'ArchivoPDF2', maxCount: 1 },
     { name: 'ArchivoPDF3', maxCount: 1 },

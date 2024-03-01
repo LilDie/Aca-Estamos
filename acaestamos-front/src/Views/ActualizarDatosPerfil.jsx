@@ -1,16 +1,13 @@
-import Footer from "../componentes/Footer/Footer";
-import Header from "../componentes/Header/Header";
-import Navbar from "../componentes/Navbar/Navbar";
+import Layout from "../Layout/Layout";
 import DatosPersonales from "../componentes/PagesUsuario/DatosPersonales/DatosPersonales";
 
 const ActualizarDatosPerfil = () => {
   return (
-    <>
-    <Header />
-    <Navbar />
-    <DatosPersonales />
-    <Footer />
-    </>
+  
+      <Layout>
+        <DatosPersonales />
+      </Layout>
+   
   )
 }
 

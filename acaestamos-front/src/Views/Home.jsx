@@ -7,7 +7,7 @@ import Navbar from "../componentes/Navbar/Navbar";
 const Home = () => {
   return (
     <>
-    <Header />
+   
     <Navbar />
     <Index />
     <Footer />

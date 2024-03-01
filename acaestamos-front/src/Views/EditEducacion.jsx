@@ -1,14 +1,11 @@
-import Footer from "../componentes/Footer/Footer";
-import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
+import Layout from "../Layout/Layout";
 import Educacion from "../componentes/PagesUsuario/Educacion/Eduacion";
 
 const EditEducacion = () => {
   return (
-    <>
-    <NavbarLogin />
-    <Educacion />
-    <Footer />
-    </>
+    <Layout>
+      <Educacion />
+    </Layout>
   )
 }
 

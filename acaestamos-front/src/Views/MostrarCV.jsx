@@ -1,15 +1,12 @@
-import Footer from "../componentes/Footer/Footer";
-import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
+import Layout from "../Layout/Layout";
 import VisualizacionCv from "../componentes/PagesUsuario/VisualizacionCV/VisualizacionCv";
 
 
 const MostrarCV = () => {
   return (
-    <>
-    <NavbarLogin />
-    <VisualizacionCv />
-    <Footer />
-    </>
+    <Layout>
+      <VisualizacionCv />
+    </Layout>
   )
 }
 

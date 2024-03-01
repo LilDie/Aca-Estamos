@@ -6,7 +6,7 @@ import OlvidoContraseña from "../componentes/OlvidoContrasena/OlvidoContrasena"
 const OlvidoContra = () => {
   return (
     <>
-    <Header />
+    
     <Navbar />
     <OlvidoContraseña />
     <Footer />

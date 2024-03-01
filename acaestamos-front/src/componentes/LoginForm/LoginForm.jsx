@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './LoginForm.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAlert } from '../../Efectos/useAlert'
 
 
 function LoginFrom() {
@@ -10,6 +11,9 @@ function LoginFrom() {
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
     const navigate = useNavigate();
+
+    // Usa el hook useAlert para obtener el estado y la API de alerta
+    const [alertState, alertApi] = useAlert("alertsElement");
 
 
     const handleSubmit = async (e) => {
@@ -20,11 +24,23 @@ function LoginFrom() {
                 Email,
                 Password
             });
+            localStorage.setItem('accessToken', response?.data?.token);
 
-            alert(JSON.stringify(response.data, null, 2));
+            alertApi.show(JSON.stringify(response.data, null, 2));
             navigate('/Perfil-Usuario')
         } catch (error) {
-            console.error('Error al enviar la solicitud:', error.response?.data || error.message);
+            const errorMessage = getErrorMessage(error);
+            alertApi.show(errorMessage, 'error');
+        }
+    };
+
+    const getErrorMessage = (error) => {
+        if (error.response && error.response.data && error.response.data.msg === "Contraseña incorrecta") {
+            return 'Datos ingresados de forma incorrecta'
+        } else if (error.message) {
+            return error.response.data.msg;
+        } else {
+            return 'Error al enviar la solicitud.';
         }
     };
 
@@ -58,6 +74,13 @@ function LoginFrom() {
                                     </div>
                                     <div className="Olvide" style={{ textAlign: 'center', marginTop: '10px' }}><Link to="/OlvidoContra" className="Olvide-con" >Recuperar Contraseña</Link></div>
                                 </form>
+
+                                {/* Muestra la alerta si está visible */}
+                                {alertState.visible && (
+                                    <div id="alertsElement" className={`alert ${alertState.type}`}>
+                                        {alertState.message}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

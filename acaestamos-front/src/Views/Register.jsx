@@ -6,7 +6,7 @@ import Registro from "../componentes/Registro/Registro"
 const Register = () => {
   return (
     <>
-    <Header />
+    
     <Navbar />
     <Registro />
     <Footer />

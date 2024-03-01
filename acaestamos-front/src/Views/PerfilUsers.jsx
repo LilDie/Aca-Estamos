@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Efectos/Loading';
-import NavbarLogin from '../componentes/NavbarLogin/NavbarLogin';
+import Layout from "../Layout/Layout";
 import PerfilUsuario from '../componentes/PagesUsuario/PerfilUsuario/PerfilUsuario';
-import Footer from '../componentes/Footer/Footer';
 
 const PerfilUsers = () => {
     const [loading, setLoading] = useState(true);
@@ -18,11 +17,9 @@ const PerfilUsers = () => {
             {loading ? (
                 <Loading />
             ) : (
-                <>
-                    <NavbarLogin />
+                <Layout>
                     <PerfilUsuario />
-                    <Footer />
-                </>
+                </Layout>
             )}
         </>
     );

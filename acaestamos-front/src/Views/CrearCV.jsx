@@ -1,14 +1,11 @@
-import Footer from "../componentes/Footer/Footer";
-import NavbarLogin from "../componentes/NavbarLogin/NavbarLogin";
+import Layout from "../Layout/Layout";
 import EditarCv from "../componentes/PagesUsuario/EditarCv/EditarCv";
 
 const CrearCV = () => {
   return (
-    <>
-    <NavbarLogin />
-    <EditarCv />
-    <Footer />
-    </>
+    <Layout>
+      <EditarCv />
+    </Layout>
   )
 }
 

@@ -1,16 +1,13 @@
-import NavbarAdmin from "../componentes/NavbarAdmin/NavbarAdmin";
-import Footer from "../componentes/Footer/Footer";
+import LayoutAdmin from "../Layout/LayoutAdmin"
 import SolicitudesUsuarios from "../componentes/PagesAdministrador/SolicitudesUsuarios/SolicitudesUsuarios";
 import FiltroAdmin from "../componentes/Filtros/FiltroAdmin/FiltroAdmin"
 
 const AdminSolicitudesUsuarios = () => {
     return (
-        <>
-        <NavbarAdmin />
-        <FiltroAdmin />
-        <SolicitudesUsuarios />
-        <Footer />
-        </>
+        <LayoutAdmin>
+            <FiltroAdmin />
+            <SolicitudesUsuarios />
+        </LayoutAdmin>
     )
 }
 

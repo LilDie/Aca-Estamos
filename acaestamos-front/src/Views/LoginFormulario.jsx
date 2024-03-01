@@ -1,16 +1,14 @@
-import Footer from "../componentes/Footer/Footer";
-import Header from "../componentes/Header/Header";
-import Navbar from "../componentes/Navbar/Navbar";
+import Layout from "../Layout/Layout";
 import LoginForm from "../componentes/LoginForm/LoginForm"
 
 const LoginFormulario = () => {
   return (
-    <>
-    <Header />
-    <Navbar />
-    <LoginForm />
-    <Footer />
-    </>
+
+    
+    <Layout>
+      
+      <LoginForm />
+    </Layout>
   )
 }
 
